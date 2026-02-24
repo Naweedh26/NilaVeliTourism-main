@@ -23,22 +23,43 @@ const AccommodationPage = () => {
 
   const accommodationTypes = [
     {
-      type: 'AC Villas',
-      description: 'Fully air-conditioned villas with modern amenities',
-      capacity: '4-10 guests',
-      ideal: 'Families & Small Groups'
+      emoji: '🏠',
+      type: 'Villas (AC & Non-AC)',
+      description: 'Spacious private villas with peaceful surroundings, ideal for relaxing holidays.',
+      capacity: '4 – 12 Guests',
+      ideal: 'Families, Small Groups & Long Stays',
+      features: [
+        'Options Available: AC Villas & Non-AC Villas',
+        'Kitchen, Garden Area, Parking',
+        'Walking Distance to Beach',
+        'Perfect for guests who prefer privacy and comfort'
+      ]
     },
     {
-      type: 'Non-AC Apartments',
-      description: 'Budget-friendly apartments with natural ventilation',
-      capacity: '4-8 guests',
-      ideal: 'Budget Travelers'
+      emoji: '🏢',
+      type: 'AC Apartments',
+      description: 'Fully air-conditioned apartments with modern facilities.',
+      capacity: '4 – 8 Guests',
+      ideal: 'Families & Budget Travelers',
+      features: [
+        'Kitchen, Living Area, Private Bathroom',
+        'Balcony with View',
+        'Comfortable and affordable option',
+        'Near Nilaveli Beach'
+      ]
     },
     {
-      type: 'Group Houses',
-      description: 'Large properties for corporate & wedding groups',
-      capacity: '15-40 guests',
-      ideal: 'Large Groups & Events'
+      emoji: '🛏️',
+      type: 'Rooms (AC & Non-AC)',
+      description: 'Clean and comfortable rooms for short stays and holidays.',
+      capacity: 'Family Room: 3–5 Guests | Double Room: 2 Guests',
+      ideal: 'Couples, Small Families & Short-term Travelers',
+      features: [
+        'Kitchen, Living Area, Private Bathroom',
+        'Balcony with View',
+        'Comfortable and affordable option',
+        'Near Nilaveli Beach'
+      ]
     }
   ];
 
@@ -135,12 +156,22 @@ const AccommodationPage = () => {
             {accommodationTypes.map((type, index) => (
               <Card key={index} className="hover:shadow-xl transition">
                 <CardContent className="p-6">
-                  <div className="text-3xl mb-3">🏠</div>
+                  <div className="text-3xl mb-3">{type.emoji}</div>
                   <h3 className="text-xl font-bold mb-2">{type.type}</h3>
                   <p className="text-gray-700 mb-3">{type.description}</p>
                   <div className="space-y-1 text-sm text-gray-600">
                     <div><strong>Capacity:</strong> {type.capacity}</div>
                     <div><strong>Ideal for:</strong> {type.ideal}</div>
+                    {type.features && (
+                      <div className="mt-2">
+                        <strong>Features:</strong>
+                        <ul className="list-disc pl-4 mt-1">
+                          {type.features.map((feature, i) => (
+                            <li key={i} className="text-gray-600">{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
