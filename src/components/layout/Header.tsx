@@ -1,6 +1,6 @@
 import { useState, createContext, useContext, ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, DollarSign } from 'lucide-react';
+import { Menu, X, DollarSign, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.jpeg';
 
@@ -39,7 +39,7 @@ const Header = () => {
     { path: '/safari', label: 'Safari' },
     { path: '/boat-tours', label: 'Boat Tours' },
     { path: '/accommodation', label: 'Accommodation' },
-    { path: '/rentals', label: 'Rentals' },
+    { path: '/rentals', label: 'Rentals' },npm install eslint@^9 --save-dev
     { path: '/city-tour', label: 'City Tour' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
@@ -52,13 +52,44 @@ const Header = () => {
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Nilaveli Taxi & Tourism Agency Logo" className="w-12 h-12 rounded-full object-cover" />
+          {/* Logo & Social Media */}
+          <div className="flex items-center gap-4">
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Nilaveli Taxi & Tourism Agency Logo" className="w-12 h-12 rounded-full object-cover" />
+            </Link>
             <div className="flex flex-col">
-              <span className="font-bold text-base text-ocean-700 leading-tight">Nilaveli Taxi & Tourism Agency (PVT) Ltd.</span>
+              <div className="flex items-center gap-2">
+                <a 
+                  href="https://www.facebook.com/share/1PF9o6NDVS/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+                  title="Follow us on Facebook"
+                >
+                  <Facebook className="w-4 h-4 text-white" />
+                </a>
+                <a 
+                  href="https://wa.me/94713516515" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition"
+                  title="WhatsApp us"
+                >
+                  <MessageCircle className="w-4 h-4 text-white" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/trincohub?utm_source=qr&igsh=MXNuaXZnbDJrZGpsYQ==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition"
+                  title="Follow us on Instagram"
+                >
+                  <Instagram className="w-4 h-4 text-white" />
+                </a>
+              </div>
+              <span className="text-sm font-semibold text-ocean-700 mt-1">TrincoHub.com</span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
