@@ -39,7 +39,7 @@ const Header = () => {
     { path: '/safari', label: 'Safari' },
     { path: '/boat-tours', label: 'Boat Tours' },
     { path: '/accommodation', label: 'Accommodation' },
-    { path: '/rentals', label: 'Rentals' },npm install eslint@^9 --save-dev
+    { path: '/rentals', label: 'Rentals' },
     { path: '/city-tour', label: 'City Tour' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/contact', label: 'Contact' },
